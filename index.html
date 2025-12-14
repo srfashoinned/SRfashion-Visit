@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>SR Fashion — Premium Ladies Fashion</title>
+  <meta name="description" content="SR Fashion - Ladies Fancy Dress Materials | Nanded, Maharashtra"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Lato:wght@400;700&family=Noto+Sans+Devanagari:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --gold: #D4AF37;
+      --dark: #2C2416;
+      --cream: #FBF8F3;
+      --accent: #8B7355;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: linear-gradient(135deg, #FBF8F3 0%, #F5EFE7 100%);
+      color: var(--dark);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Header Section */
+    .header {
+      background: linear-gradient(135deg, var(--gold), #C9A961);
+      padding: 2rem 1.5rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      to { left: 100%; }
+    }
+
+    .logo-wrapper {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 1rem;
+      border: 3px solid white;
+      border-radius: 50%;
+      padding: 5px;
+      background: white;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .logo-wrapper img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.1em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.95);
+      margin-top: 0.3rem;
+      font-style: italic;
+    }
+
+    /* Priority Call Button */
+    .priority-call {
+      background: white;
+      margin: -1.5rem 1rem 0;
+      padding: 1rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .call-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .call-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+      color: white;
+      padding: 0.9rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(76,175,80,0.3);
+    }
+
+    .call-button:active {
+      transform: scale(0.97);
+    }
+
+    .call-icon {
+      animation: ring 2s ease-in-out infinite;
+    }
+
+    @keyframes ring {
+      0%, 100% { transform: rotate(0deg); }
+      10%, 30% { transform: rotate(-12deg); }
+      20%, 40% { transform: rotate(12deg); }
+    }
+
+    /* Contact Grid - Compact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+      padding: 1.5rem 1rem 1rem;
+    }
+
+    .contact-item {
+      text-align: center;
+      padding: 1rem 0.5rem;
+      border-radius: 12px;
+      background: var(--cream);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(212,175,55,0.2);
+    }
+
+    .contact-item:active {
+      transform: scale(0.95);
+      background: rgba(212,175,55,0.1);
+    }
+
+    .contact-icon {
+      font-size: 1.8rem;
+    }
+
+    .icon-phone { color: #2196F3; }
+    .icon-whatsapp { color: #25D366; }
+    .icon-youtube { color: #FF0000; }
+    .icon-instagram { 
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .icon-qr { color: var(--gold); }
+    .icon-email { color: #EA4335; }
+
+    .contact-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    /* Card Flip Section - Compact */
+    .card-section {
+      padding: 1rem;
+      background: #f8f6f2;
+    }
+
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      text-align: center;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .flip-container {
+      perspective: 1000px;
+      height: 280px;
+      cursor: pointer;
+    }
+
+    .flip-card {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-side {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background: white;
+      border-radius: 15px;
+      padding: 1.2rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+    }
+
+    .card-top {
+      background: linear-gradient(135deg, var(--gold), #C9A961);
+      padding: 0.8rem;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.1em;
+    }
+
+    .card-slogan {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.95);
+      font-style: italic;
+      margin-top: 0.2rem;
+    }
+
+    .card-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.5rem;
+      background: rgba(212,175,55,0.05);
+      border-radius: 6px;
+      border-left: 2px solid var(--gold);
+    }
+
+    .info-icon {
+      color: var(--gold);
+      font-size: 1rem;
+      margin-top: 2px;
+    }
+
+    .info-text {
+      color: var(--dark);
+      line-height: 1.4;
+    }
+
+    .card-footer {
+      text-align: center;
+      font-size: 0.7rem;
+      color: var(--accent);
+      font-weight: 600;
+      padding-top: 0.6rem;
+      border-top: 1px solid rgba(212,175,55,0.2);
+    }
+
+    .flip-hint {
+      text-align: center;
+      margin-top: 0.8rem;
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    /* Hindi Text */
+    .hindi {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+    }
+
+    /* QR Modal - Simplified */
+    .qr-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 1rem;
+    }
+
+    .qr-modal.active {
+      display: flex;
+      animation: fadeIn 0.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .qr-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 320px;
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .qr-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    #qrImage {
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .qr-close {
+      margin-top: 1rem;
+      padding: 0.8rem 2rem;
+      background: linear-gradient(135deg, var(--gold), #C9A961);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    /* Footer - Compact */
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.7rem;
+      color: var(--accent);
+      background: #f8f6f2;
+    }
+
+    /* Mobile Optimization */
+    @media (max-width: 400px) {
+      .brand { font-size: 2rem; }
+      .contact-grid { gap: 0.6rem; }
+      .contact-item { padding: 0.8rem 0.3rem; }
+      .contact-icon { font-size: 1.5rem; }
+      .contact-label { font-size: 0.7rem; }
+    }
+
+    /* Prevent scroll on modal */
+    body.modal-open {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <!-- QR Modal -->
+  <div class="qr-modal" id="qrModal" onclick="closeQR()">
+    <div class="qr-box" onclick="event.stopPropagation()">
+      <h3><i class="fas fa-qrcode"></i> Scan to Visit</h3>
+      <canvas id="qrImage"></canvas>
+      <button class="qr-close" onclick="closeQR()">Close</button>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo-wrapper">
+        <img src="sr-fashion-logo.jpeg" alt="SR Fashion">
+      </div>
+      <div class="brand">SR FASHION</div>
+      <div class="tagline">Elegance Meets Tradition</div>
+    </div>
+
+    <!-- Priority Call -->
+    <div class="priority-call">
+      <div class="call-label">
+        <i class="fas fa-star"></i> Priority Contact <i class="fas fa-star"></i>
+      </div>
+      <a href="tel:+917588756669" class="call-button">
+        <i class="fas fa-phone call-icon"></i>
+        +91 7588 756 669
+      </a>
+    </div>
+
+    <!-- Contact Grid -->
+    <div class="contact-grid">
+      <a href="tel:+917588756668" class="contact-item">
+        <i class="fas fa-phone contact-icon icon-phone"></i>
+        <span class="contact-label">Call 2nd</span>
+      </a>
+
+      <a href="https://wa.me/917588756669" target="_blank" class="contact-item">
+        <i class="fab fa-whatsapp contact-icon icon-whatsapp"></i>
+        <span class="contact-label">WhatsApp</span>
+      </a>
+
+      <a href="mailto:srfashionned@gmail.com" class="contact-item">
+        <i class="fas fa-envelope contact-icon icon-email"></i>
+        <span class="contact-label">Email</span>
+      </a>
+
+      <a href="https://www.youtube.com/@SRFashionned/featured" target="_blank" class="contact-item">
+        <i class="fab fa-youtube contact-icon icon-youtube"></i>
+        <span class="contact-label">YouTube</span>
+      </a>
+
+      <a href="https://www.instagram.com/srfashionned/" target="_blank" class="contact-item">
+        <i class="fab fa-instagram contact-icon icon-instagram"></i>
+        <span class="contact-label">Instagram</span>
+      </a>
+
+      <div class="contact-item" onclick="showQR()">
+        <i class="fas fa-qrcode contact-icon icon-qr"></i>
+        <span class="contact-label">QR Code</span>
+      </div>
+    </div>
+
+    <!-- Card Section -->
+    <div class="card-section">
+      <div class="card-title">Digital Business Card</div>
+      
+      <div class="flip-container" onclick="flipCard()">
+        <div class="flip-card" id="flipCard">
+          <!-- Front - English -->
+          <div class="card-side card-front">
+            <div class="card-top">
+              <div class="card-brand">SR FASHION</div>
+              <div class="card-slogan">Your Choice... Our Priority...</div>
+            </div>
+
+            <div class="card-info">
+              <div class="info-row">
+                <i class="fas fa-map-marker-alt info-icon"></i>
+                <div class="info-text">Eidgah Kaman Road, Degloor Naka<br>Nanded - 431 604, Maharashtra</div>
+              </div>
+
+              <div class="info-row">
+                <i class="fas fa-phone info-icon"></i>
+                <div class="info-text">+91 7588 756 669 | +91 7588 756 668</div>
+              </div>
+
+              <div class="info-row">
+                <i class="fas fa-envelope info-icon"></i>
+                <div class="info-text">srfashionned@gmail.com</div>
+              </div>
+            </div>
+
+            <div class="card-footer">Premium Seller of Ladies Fancy Dress Materials</div>
+          </div>
+
+          <!-- Back - Hindi -->
+          <div class="card-side card-back hindi">
+            <div class="card-top">
+              <div class="card-brand">SR फैशन</div>
+              <div class="card-slogan">आपकी पसंद... हमारी प्राथमिकता...</div>
+            </div>
+
+            <div class="card-info">
+              <div class="info-row">
+                <i class="fas fa-map-marker-alt info-icon"></i>
+                <div class="info-text">ईदगाह कमान रोड, देगलूर नाका<br>नांदेड़ - 431 604, महाराष्ट्र</div>
+              </div>
+
+              <div class="info-row">
+                <i class="fas fa-phone info-icon"></i>
+                <div class="info-text">+91 7588 756 669 | +91 7588 756 668</div>
+              </div>
+
+              <div class="info-row">
+                <i class="fas fa-envelope info-icon"></i>
+                <div class="info-text">srfashionned@gmail.com</div>
+              </div>
+            </div>
+
+            <div class="card-footer">लेडीज फैन्सी ड्रेस मटेरीयल्स के प्रीमियम विक्रेता</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-hint">
+        <i class="fas fa-sync-alt"></i> Tap card to flip
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      © 2024 SR Fashion • Nanded, Maharashtra
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <script>
+    function flipCard() {
+      document.getElementById('flipCard').classList.toggle('flipped');
+    }
+
+    const WEBSITE_URL = 'https://srfashion.example.com/';
+    let qrGenerated = false;
+
+    function showQR() {
+      document.body.classList.add('modal-open');
+      document.getElementById('qrModal').classList.add('active');
+      if (!qrGenerated) {
+        new QRious({
+          element: document.getElementById('qrImage'),
+          value: WEBSITE_URL,
+          size: 240,
+          level: 'H',
+          background: '#ffffff',
+          foreground: '#000000',
+          padding: 15
+        });
+        qrGenerated = true;
+      }
+    }
+
+    function closeQR() {
+      document.body.classList.remove('modal-open');
+      document.getElementById('qrModal').classList.remove('active');
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeQR();
+    });
+
+    // Touch feedback
+    document.querySelectorAll('.contact-item, .call-button').forEach(el => {
+      el.addEventListener('touchstart', function() {
+        this.style.opacity = '0.7';
+      });
+      el.addEventListener('touchend', function() {
+        this.style.opacity = '1';
+      });
+    });
+  </script>
+</body>
+</html>
